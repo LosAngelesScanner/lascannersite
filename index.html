@@ -76,12 +76,6 @@
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    .live-box {
-      border-left: 4px solid #f00;
-      padding-left: 1rem;
-      margin-top: 1rem;
-      color: #ff8080;
-    }
   </style>
 </head>
 <body>
@@ -90,7 +84,7 @@
     <p>Reporting news in progress across all of the Greater Los Angeles area</p>
   </header>
 
-  <div class="ticker">BREAKING: Scanner traffic reports a pursuit in progress in South LA. Updates incoming.</div>
+  <div class="ticker">BREAKING: Live updates now powered by @LosAngeles_Scan</div>
 
   <nav>
     <a href="#about">About</a>
@@ -108,13 +102,11 @@
   <section id="reports">
     <div class="card">
       <h2>Live Reports</h2>
-      <p>Our most recent updates appear on our <a href="https://twitter.com/LosAngeles_Scan" target="_blank">Twitter feed</a>. Bookmark this site for official reports once confirmed. All updates reflect scanner radio traffic and may evolve as new details emerge.</p>
-      <div class="live-box">
-        <strong>🚨 Ongoing:</strong> Structure fire reported near Fairfax & Pico. LAFD en route. Expect closures.
-      </div>
-      <div class="live-box">
-        <strong>🚓 Just In:</strong> Hit-and-run incident in Echo Park. Suspect vehicle: dark sedan, last seen NB on Glendale Blvd.
-      </div>
+      <p>Our most recent updates appear below, directly from our <a href="https://twitter.com/LosAngeles_Scan" target="_blank">Twitter feed</a>.</p>
+      <blockquote class="twitter-tweet" data-theme="dark">
+        <a href="https://twitter.com/LosAngeles_Scan"></a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </section>
 
