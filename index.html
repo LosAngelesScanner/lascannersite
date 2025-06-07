@@ -11,6 +11,7 @@
       margin: 0;
       background-color: #0f0f0f;
       color: #f4f4f4;
+      scroll-behavior: smooth;
     }
     header {
       background-image: url('skyline.jpg');
@@ -18,15 +19,28 @@
       background-position: center;
       padding: 6rem 2rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
     }
     header h1 {
       font-size: 3rem;
       margin: 0;
+      position: relative;
+      z-index: 1;
     }
     header p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
       color: #ccc;
+      position: relative;
+      z-index: 1;
     }
     nav {
       background-color: #1a1a1a;
@@ -35,12 +49,19 @@
       padding: 1rem;
       border-top: 1px solid #333;
       border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
     nav a {
       color: #f4f4f4;
       text-decoration: none;
       margin: 0 1rem;
       font-weight: 700;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff3c3c;
     }
     section {
       padding: 3rem 2rem;
@@ -49,10 +70,14 @@
     }
     .card {
       background-color: #1a1a1a;
-      border-radius: 10px;
+      border-radius: 16px;
       padding: 2rem;
       margin-bottom: 2rem;
-      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+      box-shadow: 0 0 30px rgba(255,255,255,0.05);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
     }
     .card h2 {
       margin-top: 0;
@@ -70,21 +95,31 @@
       font-weight: bold;
       padding: 0.5rem 1rem;
       text-align: center;
-      animation: ticker 10s linear infinite;
+      animation: ticker 15s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
     }
     @keyframes ticker {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
+    .glow {
+      text-shadow: 0 0 8px #ff3c3c, 0 0 12px #ff3c3c;
+    }
+    .gradient-text {
+      background: linear-gradient(45deg, #ff3c3c, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Los Angeles Scanner</h1>
-    <p>Reporting news in progress across all of the Greater Los Angeles area</p>
+    <h1 class="gradient-text">Los Angeles Scanner</h1>
+    <p class="glow">Reporting news in progress across all of the Greater Los Angeles area</p>
   </header>
 
-  <div class="ticker">BREAKING: Live updates now powered by @LosAngeles_Scan</div>
+  <div class="ticker">🚨 BREAKING: Live updates now powered by @LosAngeles_Scan — stay tuned for real-time alerts 🚓</div>
 
   <nav>
     <a href="#about">About</a>
